@@ -1844,6 +1844,9 @@ section h2 em { font-style: italic; color: var(--terra); }
 @media (max-width: 520px) {
   :root { --page-pad: 1rem; }
 
+ .logo-mark {
+  transform: translateX(-33px);
+}
   /* Nav */
   .logo-mark { width: 110px; height: 40px; }
   .nav-inner { height: 58px; }
