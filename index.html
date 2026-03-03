@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oasis Structures (U) Limited — Premium Property &amp; Real Estate</title>
+  <meta name="description" content="Uganda's premier real estate and software firm. Premium apartments, villas, managed residences &amp; custom software across Kampala, Entebbe &amp; beyond.">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+
+  <!-- ══ ANNOUNCEMENT BAR ══ -->
+  <div class="announce-bar">
+    <span>New Listings in Naguru &amp; Muyenga</span>
+    <span class="announce-sep">|</span>
+    <a href="#listings">View Properties →</a>
+    <span class="announce-sep" style="display:none" id="announceSep2">|</span>
+    <span id="announceRight" style="display:none">Ministry of Lands Licensed &nbsp;·&nbsp; Est. 2012</span>
+  </div>
+
+  <!-- ══ FLOATING WHATSAPP ══ -->
+  <a href="https://wa.me/256414000000" target="_blank" rel="noopener" class="whatsapp-fab" aria-label="Chat on WhatsApp">
+    <span class="fab-tooltip">Chat on WhatsApp</span>
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <!-- ══ SCROLL TO TOP ══ -->
+  <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"/>
+    </svg>
+  </button>
+
+  <!-- ══ REGISTRATION MODAL ══ -->
+  <div class="modal-backdrop" id="modalBackdrop" onclick="closeModal()"></div>
+  <div class="modal" id="regModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
+    <div class="modal-logo">
+      <svg width="42" height="42" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="19" cy="19" r="18" stroke="#C8996A" stroke-width="1.5"/>
+        <path d="M19 8 C19 8, 8 16, 8 22 C8 28, 13 31, 19 31 C25 31, 30 28, 30 22 C30 16, 19 8, 19 8Z" fill="#C8996A" opacity="0.25"/>
+        <circle cx="19" cy="22" r="3" fill="#C8996A"/>
+        <line x1="19" y1="8" x2="19" y2="14" stroke="#2E4A35" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <h2 id="modalTitle">Client Registration</h2>
+    <p class="modal-sub">Join Oasis Uganda — tell us about your needs and we'll be in touch within 24 hours.</p>
+    <div class="modal-divider"><span>Your Details</span></div>
+    <div id="regForm">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="fname">First Name <span class="req">*</span></label>
+          <input type="text" id="fname" placeholder="e.g. John" />
+        </div>
+        <div class="form-group">
+          <label for="lname">Last Name <span class="req">*</span></label>
+          <input type="text" id="lname" placeholder="e.g. Mukasa" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="remail">Email Address <span class="req">*</span></label>
+        <input type="email" id="remail" placeholder="you@example.com" />
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" placeholder="+256 7XX XXX XXX" />
+      </div>
+      <div class="form-group">
+        <label for="org">Organisation / Company</label>
+        <input type="text" id="org" placeholder="Your company name (optional)" />
+      </div>
+      <div class="form-group">
+        <label for="service">Service Interested In <span class="req">*</span></label>
+        <select id="service">
+          <option value="">— Select a service —</option>
+          <option>Residential Construction &amp; Development</option>
+          <option>Property Rental &amp; Management</option>
+          <option>Architecture, Design &amp; Interiors</option>
+          <option>Custom Software Development</option>
+          <option>Property Management Software Integration</option>
+          <option>Consulting, Maintenance &amp; Support</option>
+          <option>Other / Multiple</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="message">Additional Notes</label>
+        <textarea id="message" rows="3" placeholder="Tell us more about what you're looking for…"></textarea>
+      </div>
+      <button class="form-submit" onclick="submitForm()">Register as a Client</button>
+      <p class="form-note">Or email us directly at <a href="mailto:hello@oasisuganda.com">hello@oasisuganda.com</a></p>
+    </div>
+    <div class="form-success" id="formSuccess">
+      <div class="success-icon">✓</div>
+      <h3>Registration Received!</h3>
+      <p>Thank you for registering. Our team will contact you within 24 hours to help find your perfect home.</p>
+      <button class="btn-primary" onclick="closeModal()">Close</button>
+    </div>
+  </div>
+
+  <!-- ══ NAV ══ -->
+  <header class="nav" id="mainNav">
+    <div class="nav-inner">
+      <a href="#" class="logo">
+        <div class="logo-mark"></div>
+      </a>
+      <nav class="nav-links">
+        <a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#gallery-section">Gallery</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="nav-register" onclick="openModal()">Register</button>
+        <a href="mailto:hello@oasisuganda.com" class="nav-cta">Get in Touch</a>
+      </div>
+      <button class="hamburger" aria-label="Menu" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#" onclick="toggleMenu()">Home</a>
+      <a href="#about" onclick="toggleMenu()">About</a>
+      <a href="#services" onclick="toggleMenu()">Services</a>
+      <a href="#gallery-section" onclick="toggleMenu()">Gallery</a>
+      <a href="#contact" onclick="toggleMenu()">Contact</a>
+      <button class="mobile-register" onclick="toggleMenu(); openModal()">Register as Client</button>
+      <a href="mailto:hello@oasisuganda.com" class="mobile-cta">Get in Touch</a>
+    </div>
+  </header>
+
+  <!-- ══ HERO ══ -->
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1800&q=85" alt="Luxury apartment exterior" />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-grain"></div>
+    <div class="hero-accent-line"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Welcome to Oasis Structures (U) Limited</p>
+      <h1 class="hero-title">Future <em>delivered</em>..</h1>
+      <div class="search-bar">
+        <div class="search-field">
+          <label>Location</label>
+          <input type="text" placeholder="Kampala, Entebbe, Jinja…" />
+        </div>
+        <div class="search-divider"></div>
+        <div class="search-field">
+          <label>Bedrooms</label>
+          <select>
+            <option value="">Any</option>
+            <option>Studio</option>
+            <option>1 Bedroom</option>
+            <option>2 Bedrooms</option>
+            <option>3+ Bedrooms</option>
+          </select>
+        </div>
+        <div class="search-divider"></div>
+        <div class="search-field">
+          <label>Budget (UGX)</label>
+          <select>
+            <option value="">Any</option>
+            <option>Under 1.5M/mo</option>
+            <option>1.5M – 3M/mo</option>
+            <option>3M – 6M/mo</option>
+            <option>6M+/mo</option>
+          </select>
+        </div>
+        <button class="search-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          Search
+        </button>
+      </div>
+      <p class="hero-register-nudge"><button class="hero-register-link" onclick="openModal()">Register here →</button></p>
+    </div>
+    <div class="hero-trust">
+      <div class="hero-trust-item">
+        <span class="hero-trust-num">240+</span>
+        <span class="hero-trust-label">Properties</span>
+      </div>
+      <div class="hero-trust-sep"></div>
+      <div class="hero-trust-item">
+        <span class="hero-trust-num">12 yrs</span>
+        <span class="hero-trust-label">Experience</span>
+      </div>
+      <div class="hero-trust-sep"></div>
+      <div class="hero-trust-item">
+        <span class="hero-trust-num">98%</span>
+        <span class="hero-trust-label">Satisfaction</span>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll to explore</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ══ STATS STRIP ══ -->
+  <section class="stats-strip">
+    <div class="stat"><strong data-count="240">0</strong><span>Properties Listed</span></div>
+    <div class="stat-sep"></div>
+    <div class="stat"><strong data-count="15">0</strong><span>Neighbourhoods</span></div>
+    <div class="stat-sep"></div>
+    <div class="stat"><strong data-count="98" data-suffix="%">0</strong><span>Tenant Satisfaction</span></div>
+    <div class="stat-sep"></div>
+    <div class="stat"><strong data-count="12" data-suffix=" yrs">0</strong><span>Serving Uganda</span></div>
+    <div class="stat-sep"></div>
+    <div class="stat"><strong data-count="2000" data-suffix="+">0</strong><span>Happy Tenants</span></div>
+  </section>
+
+  <!-- ══ PROJECT GALLERY / SERVICES ══ -->
+  <section class="services-section" id="services">
+    <div class="section-header">
+      <p class="section-label">What We Do</p>
+      <h2>Project <em>Gallery</em></h2>
+      <p class="section-sub">From building dream homes to powering them with smart software — explore the full range of what Oasis delivers.</p>
+    </div>
+
+    <div class="services-grid">
+
+      <!-- 1 Residential Construction -->
+      <div class="service-card">
+        <div class="service-card-img">
+          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=700&q=80" alt="Residential Construction" loading="lazy"/>
+          <div class="service-card-img-overlay"></div>
+        </div>
+        <div class="service-card-body">
+          <div class="service-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+          </div>
+          <h3>Residential Construction &amp; Development</h3>
+          <p>We design and build quality homes, apartments, and gated estates across Uganda — from foundation to finishing, built to last a lifetime.</p>
+          <a href="mailto:hello@oasisuganda.com?subject=Enquiry: Residential Construction" class="service-card-link">
+            Enquire Now
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- 2 Property Rental & Management -->
+      <div class="service-card">
+        <div class="service-card-img">
+          <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=700&q=80" alt="Property Rental and Management" loading="lazy"/>
+          <div class="service-card-img-overlay"></div>
+        </div>
+        <div class="service-card-body">
+          <div class="service-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+          </div>
+          <h3>Property Rental &amp; Management</h3>
+          <p>End-to-end letting and management for landlords and tenants alike — from listing and tenant vetting to maintenance coordination and rent collection.</p>
+          <a href="mailto:hello@oasisuganda.com?subject=Enquiry: Property Management" class="service-card-link">
+            Enquire Now
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- 3 Architecture, Design & Interiors -->
+      <div class="service-card">
+        <div class="service-card-img">
+          <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=700&q=80" alt="Architecture Design and Interiors" loading="lazy"/>
+          <div class="service-card-img-overlay"></div>
+        </div>
+        <div class="service-card-body">
+          <div class="service-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+          </div>
+          <h3>Architecture, Design &amp; Interiors</h3>
+          <p>Our in-house architects and interior designers craft spaces that are both beautiful and functional — blending East African warmth with contemporary elegance.</p>
+          <a href="mailto:hello@oasisuganda.com?subject=Enquiry: Architecture and Design" class="service-card-link">
+            Enquire Now
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- 4 Custom Software Development -->
+      <div class="service-card">
+        <div class="service-card-img">
+          <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=700&q=80" alt="Custom Software Development" loading="lazy"/>
+          <div class="service-card-img-overlay"></div>
+        </div>
+        <div class="service-card-body">
+          <div class="service-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <h3>Custom Software Development</h3>
+          <p>We build bespoke web and mobile applications tailored to your business — from tenant portals and booking platforms to full enterprise systems.</p>
+          <a href="mailto:hello@oasisuganda.com?subject=Enquiry: Custom Software" class="service-card-link">
+            Enquire Now
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- 5 Property Management Software Integration -->
+      <div class="service-card">
+        <div class="service-card-img">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80" alt="Property Management Software" loading="lazy"/>
+          <div class="service-card-img-overlay"></div>
+        </div>
+        <div class="service-card-body">
+          <div class="service-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+          </div>
+          <h3>Property Management Software Integration</h3>
+          <p>We integrate leading property management platforms — automating rent tracking, maintenance requests, reporting, and tenant communications.</p>
+          <a href="mailto:hello@oasisuganda.com?subject=Enquiry: Software Integration" class="service-card-link">
+            Enquire Now
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- 6 Consulting, Maintenance & Support -->
+      <div class="service-card">
+        <div class="service-card-img">
+          <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=700&q=80" alt="Consulting and Support" loading="lazy"/>
+          <div class="service-card-img-overlay"></div>
+        </div>
+        <div class="service-card-body">
+          <div class="service-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Consulting, Maintenance &amp; Support</h3>
+          <p>Expert advisory on property investment, facility maintenance programmes, and ongoing technical support for all our real estate and software solutions.</p>
+          <a href="mailto:hello@oasisuganda.com?subject=Enquiry: Consulting and Support" class="service-card-link">
+            Enquire Now
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ FEATURED LISTINGS ══ -->
+  <section class="listings" id="listings">
+    <div class="section-header">
+      <p class="section-label">Featured Properties</p>
+      <h2>Curated for <em>Your Lifestyle</em></h2>
+      <p class="section-sub">Handpicked residences combining modern design with the warmth of East African living.</p>
+    </div>
+    <div class="listings-filter">
+      <button class="filter-btn active">All</button>
+      <button class="filter-btn">Apartments</button>
+      <button class="filter-btn">Villas</button>
+      <button class="filter-btn">Serviced Units</button>
+    </div>
+    <div class="listings-grid">
+      <article class="card card--featured">
+        <div class="card-img">
+          <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=900&q=80" alt="Kololo Heights Apartment" loading="lazy"/>
+          <span class="card-badge">Featured</span>
+          <span class="card-tag">Apartment</span>
+        </div>
+        <div class="card-body">
+          <div class="card-meta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Kololo, Kampala</div>
+          <h3 class="card-title">Kololo Heights Penthouse</h3>
+          <p class="card-desc">Sweeping city views from a fully furnished 3-bed penthouse with private rooftop terrace and smart home features.</p>
+          <div class="card-details">
+            <span class="card-detail-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg> 3 Bedrooms</span>
+            <span class="card-detail-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16"/><path d="M4 12a8 8 0 0 1 16 0"/><path d="M6 12v4"/><path d="M18 12v4"/><path d="M3 20h18"/></svg> 2 Bathrooms</span>
+            <span class="card-detail-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg> 180 m²</span>
+          </div>
+          <div class="card-footer">
+            <div class="card-price">UGX 8,500,000<span>/mo</span></div>
+            <a href="mailto:hello@oasisuganda.com?subject=Enquiry: Kololo Heights Penthouse" class="card-btn">Enquire</a>
+          </div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-img"><img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80" alt="Naguru modern apartment" loading="lazy"/><span class="card-tag">Apartment</span></div>
+        <div class="card-body">
+          <div class="card-meta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Naguru, Kampala</div>
+          <h3 class="card-title">Naguru Modern 2-Bed</h3>
+          <p class="card-desc">Contemporary design with open-plan living, fitted kitchen, and secure parking in a gated compound.</p>
+          <div class="card-details"><span class="card-detail-item">2 Bed</span><span class="card-detail-item">2 Bath</span><span class="card-detail-item">95 m²</span></div>
+          <div class="card-footer"><div class="card-price">UGX 3,200,000<span>/mo</span></div><a href="mailto:hello@oasisuganda.com?subject=Enquiry: Naguru Modern 2-Bed" class="card-btn">Enquire</a></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-img"><img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=800&q=80" alt="Bugolobi serviced studio" loading="lazy"/><span class="card-tag">Serviced</span></div>
+        <div class="card-body">
+          <div class="card-meta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Bugolobi, Kampala</div>
+          <h3 class="card-title">Bugolobi Serviced Studio</h3>
+          <p class="card-desc">Ideal for professionals — fully serviced studio with weekly cleaning, high-speed Wi-Fi, and 24/7 security.</p>
+          <div class="card-details"><span class="card-detail-item">Studio</span><span class="card-detail-item">1 Bath</span><span class="card-detail-item">45 m²</span></div>
+          <div class="card-footer"><div class="card-price">UGX 1,800,000<span>/mo</span></div><a href="mailto:hello@oasisuganda.com?subject=Enquiry: Bugolobi Studio" class="card-btn">Enquire</a></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-img"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80" alt="Muyenga villa" loading="lazy"/><span class="card-tag">Villa</span></div>
+        <div class="card-body">
+          <div class="card-meta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Muyenga, Kampala</div>
+          <h3 class="card-title">Muyenga Garden Villa</h3>
+          <p class="card-desc">Lush private garden, outdoor pool, 4 ensuite bedrooms. Perfect for families seeking space and prestige.</p>
+          <div class="card-details"><span class="card-detail-item">4 Bed</span><span class="card-detail-item">4 Bath</span><span class="card-detail-item">320 m²</span></div>
+          <div class="card-footer"><div class="card-price">UGX 12,000,000<span>/mo</span></div><a href="mailto:hello@oasisuganda.com?subject=Enquiry: Muyenga Villa" class="card-btn">Enquire</a></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-img"><img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&q=80" alt="Entebbe lakeview apartment" loading="lazy"/><span class="card-tag">Apartment</span></div>
+        <div class="card-body">
+          <div class="card-meta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Entebbe</div>
+          <h3 class="card-title">Entebbe Lakeview 1-Bed</h3>
+          <p class="card-desc">Peaceful lakeside living with stunning views of Lake Victoria, just minutes from Entebbe International Airport.</p>
+          <div class="card-details"><span class="card-detail-item">1 Bed</span><span class="card-detail-item">1 Bath</span><span class="card-detail-item">60 m²</span></div>
+          <div class="card-footer"><div class="card-price">UGX 2,400,000<span>/mo</span></div><a href="mailto:hello@oasisuganda.com?subject=Enquiry: Entebbe Lakeview" class="card-btn">Enquire</a></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-img"><img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=80" alt="Ntinda family apartment" loading="lazy"/><span class="card-tag">Apartment</span></div>
+        <div class="card-body">
+          <div class="card-meta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Ntinda, Kampala</div>
+          <h3 class="card-title">Ntinda Family Flat</h3>
+          <p class="card-desc">Spacious 3-bedroom apartment in a quiet family neighbourhood, close to international schools and shopping.</p>
+          <div class="card-details"><span class="card-detail-item">3 Bed</span><span class="card-detail-item">2 Bath</span><span class="card-detail-item">140 m²</span></div>
+          <div class="card-footer"><div class="card-price">UGX 4,500,000<span>/mo</span></div><a href="mailto:hello@oasisuganda.com?subject=Enquiry: Ntinda Family Flat" class="card-btn">Enquire</a></div>
+        </div>
+      </article>
+    </div>
+    <div class="listings-more">
+      <a href="mailto:hello@oasisuganda.com?subject=All Properties Request" class="btn-outline">View All Properties</a>
+    </div>
+  </section>
+
+  <!-- ══ HOW IT WORKS ══ -->
+  <section class="process" id="process">
+    <div class="section-header">
+      <p class="section-label">Simple &amp; Transparent</p>
+      <h2>How It <em>Works</em></h2>
+      <p class="section-sub">We've made building your perfect home effortless — four steps to your new address.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-step"><div class="process-num"><span>01</span></div><h4>Register &amp; Share Needs</h4><p>Tell us your preferences, budget, and timeline. Our advisors will get in touch within 24 hours.</p></div>
+      <div class="process-step"><div class="process-num"><span>02</span></div><h4>Curated Shortlist</h4><p>We prepare a tailored selection of properties that match your exact requirements.</p></div>
+      <div class="process-step"><div class="process-num"><span>03</span></div><h4>Guided Viewings</h4><p>Visit properties at your convenience, accompanied by a dedicated Oasis advisor.</p></div>
+      <div class="process-step"><div class="process-num"><span>04</span></div><h4>Move In</h4><p>We handle the paperwork, negotiations, and handover — you just bring your furniture.</p></div>
+    </div>
+  </section>
+
+  <!-- ══ ABOUT STRIP ══ -->
+  <section class="about" id="about">
+    <div class="about-img">
+      <img src="https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=900&q=80" alt="Oasis Uganda team and building" loading="lazy"/>
+      <div class="about-img-accent"></div>
+      <div class="about-img-overlay"><strong>Est.</strong><strong>2012</strong><span>In Kampala, Uganda</span></div>
+    </div>
+    <div class="about-content">
+      <p class="section-label">Who We Are</p>
+      <h2>Uganda's Most Trusted<br/><em>Property Partner</em></h2>
+      <p>Since 2012, Oasis Structures has been connecting people with premium living spaces across the Pearl of Africa. We believe that finding and building a home should feel as calm and refreshing as an oasis — effortless, beautiful, and just right for you.</p>
+      <p>From modern serviced studios in Kampala's business district to sprawling lakeview villas in Entebbe, and from bespoke software solutions to full property management systems, our portfolio reflects Uganda's vibrant diversity and growing ambition.</p>
+      <div class="about-badges">
+        <div class="badge"><div class="badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>Licensed Estate Agents — URSB Registered</div>
+        <div class="badge"><div class="badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>Ministry of Lands, Housing &amp; Urban Development Certified</div>
+        <div class="badge"><div class="badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>Trusted by 2,000+ Clients Across Uganda</div>
+      </div>
+      <div class="about-actions">
+        <a href="mailto:hello@oasisuganda.com" class="btn-primary">Talk to Our Team</a>
+        <button class="btn-outline-sm" onclick="openModal()">Register as Client</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ AMENITIES ══ -->
+  <section class="amenities" id="amenities">
+    <div class="section-header light">
+      <p class="section-label">Why Choose Oasis</p>
+      <h2>Living Made <em>Exceptional</em></h2>
+    </div>
+    <div class="amenities-grid">
+      <div class="amenity-card"><div class="amenity-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h20"/><path d="M2 12c0-4 4-8 10-8s10 4 10 8"/><path d="M4 16h16"/><path d="M2 12c0 4 4 8 10 8s10-4 10-8"/></svg></div><h4>Swimming Pools</h4><p>Select properties feature private and communal pools maintained to the highest standards year-round.</p></div>
+      <div class="amenity-card"><div class="amenity-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><h4>24/7 Security</h4><p>CCTV surveillance, electric perimeter fencing, and trained on-site guards ensuring peace of mind.</p></div>
+      <div class="amenity-card"><div class="amenity-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 1 10 10c0 5.52-4.48 10-10 10S2 17.52 2 12c0-2.76 1.12-5.26 2.93-7.07"/><path d="M12 6v6l4 2"/></svg></div><h4>Landscaped Gardens</h4><p>Lush tropical gardens and curated green spaces that bring the beauty of nature into every day.</p></div>
+      <div class="amenity-card"><div class="amenity-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><h4>Backup Power</h4><p>Generator and solar backup systems ensuring uninterrupted power supply across all properties.</p></div>
+      <div class="amenity-card"><div class="amenity-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div><h4>Secure Parking</h4><p>Covered, gated parking bays available at all residential complexes.</p></div>
+      <div class="amenity-card"><div class="amenity-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg></div><h4>High-Speed Internet</h4><p>Fibre and wireless internet options available in all serviced and managed properties.</p></div>
+    </div>
+  </section>
+
+  <!-- ══ GALLERY ══ -->
+  <section class="gallery" id="gallery-section">
+    <div class="gallery-grid">
+      <div class="gallery-item g-tall"><img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=600&q=80" alt="Interior" loading="lazy"/><span class="gallery-view-btn">View Tour</span></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80" alt="Kitchen" loading="lazy"/><span class="gallery-view-btn">View Tour</span></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1560185008-b033106af5c3?w=600&q=80" alt="Bedroom" loading="lazy"/><span class="gallery-view-btn">View Tour</span></div>
+      <div class="gallery-item g-wide"><img src="https://images.unsplash.com/photo-1566195992011-5f6b21e539aa?w=900&q=80" alt="Living Room" loading="lazy"/><span class="gallery-view-btn">View Tour</span></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&q=80" alt="Bathroom" loading="lazy"/><span class="gallery-view-btn">View Tour</span></div>
+    </div>
+    <div class="gallery-caption">
+      <p>Every interior is crafted to inspire — browse over 240 properties with full photo tours.</p>
+      <a href="mailto:hello@oasisuganda.com?subject=Property Tour Request" class="btn-outline white">Request a Viewing</a>
+    </div>
+  </section>
+
+  <!-- ══ TESTIMONIALS ══ -->
+  <section class="testimonials">
+    <div class="section-header" style="margin-bottom:3.5rem">
+      <p class="section-label">Resident Stories</p>
+      <h2>Voices from Our <em>Community</em></h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial">
+        <div class="testimonial-quote-icon"><svg viewBox="0 0 24 24"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg></div>
+        <div class="testimonial-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p>"Oasis Uganda found us our dream apartment in Kololo within a week. The whole process was smooth, transparent, and professional. We've never looked back."</p>
+        <div class="testimonial-author"><img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=80&q=80" alt="Sarah M." loading="lazy"/><div><strong>Sarah M.</strong><span>Kololo Resident since 2021</span></div></div>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial-quote-icon"><svg viewBox="0 0 24 24"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg></div>
+        <div class="testimonial-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p>"As an expat moving to Kampala for work, I was nervous about finding a safe, comfortable place. Oasis made it completely stress-free and genuinely pleasant."</p>
+        <div class="testimonial-author"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80" alt="James O." loading="lazy"/><div><strong>James O.</strong><span>Naguru Resident since 2022</span></div></div>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial-quote-icon"><svg viewBox="0 0 24 24"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg></div>
+        <div class="testimonial-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p>"Outstanding service from viewing to signing. The team at Oasis Uganda truly understands what quality living means in this city. Highly professional."</p>
+        <div class="testimonial-author"><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=80&q=80" alt="Amara K." loading="lazy"/><div><strong>Amara K.</strong><span>Muyenga Resident since 2020</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CONTACT CTA ══ -->
+  <section class="contact-cta" id="contact">
+    <div class="contact-bg">
+      <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1800&q=80" alt="Kampala skyline" loading="lazy"/>
+      <div class="contact-overlay"></div>
+    </div>
+    <div class="contact-content">
+      <p class="section-label light">Ready to Move?</p>
+      <h2>Let's Find Your <em>Oasis</em></h2>
+      <p>Whether you're renting, investing, building, or just exploring, our team is ready to help. Reach out today and let's get started.</p>
+      <div class="contact-options">
+        <a href="mailto:hello@oasisuganda.com" class="contact-option">
+          <span class="contact-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+          <div><strong>Email Us</strong><span>hello@oasisuganda.com</span></div>
+        </a>
+        <a href="tel:+256414000000" class="contact-option">
+          <span class="contact-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.36 2 2 0 0 1 3.58 1.15h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.29 6.29l1.88-1.88a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+          <div><strong>Call Us</strong><span>+256 701603676 / 0772603676</span></div>
+        </a>
+        <button class="contact-option contact-btn" onclick="openModal()">
+          <span class="contact-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></span>
+          <div><strong>Register as Client</strong><span>Fill our quick form</span></div>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="#" class="logo"><div class="logo-mark"></div></a>
+        <p>Uganda's premier property &amp; technology experience — connecting people to spaces that feel like home, and building the software that runs them. Est. 2012, Kampala.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Explore</h5>
+        <a href="#">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#services">Services</a>
+        <a href="#listings">All Listings</a>
+        <a href="#gallery-section">Gallery</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h5>Locations</h5>
+        <a href="#">Kampala</a>
+        <a href="#">Entebbe</a>
+        <a href="#">Jinja</a>
+        <a href="#">Mbarara</a>
+        <a href="#">Gulu</a>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <a href="mailto:hello@oasisuganda.com">hello@oasisuganda.com</a>
+        <a href="tel:+256414000000">+256 772 603 676 / 0701 603 676</a>
+        <a href="https://wa.me/256414000000">WhatsApp Us</a>
+        <a href="#">Plot 14, Entebbe Road<br/>Kampala, Uganda</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Oasis Structures (U) Limited. All rights reserved.</p>
+      <span class="footer-reg-mark">Reg. No. UG2012/0834</span>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* ── ANNOUNCE BAR ── */
+    (function(){
+      const sep2 = document.getElementById('announceSep2');
+      const right = document.getElementById('announceRight');
+      if(window.innerWidth >= 768) {
+        if(sep2) sep2.style.display = '';
+        if(right) right.style.display = '';
+      }
+    })();
+
+    /* ── NAV SCROLL ── */
+    const nav = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    /* ── SCROLL TO TOP ── */
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+    window.addEventListener('scroll', () => {
+      scrollTopBtn.classList.toggle('visible', window.scrollY > 400);
+    }, { passive: true });
+
+    /* ── MODAL ── */
+    function openModal() {
+      document.getElementById('regModal').classList.add('open');
+      document.getElementById('modalBackdrop').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal() {
+      document.getElementById('regModal').classList.remove('open');
+      document.getElementById('modalBackdrop').classList.remove('open');
+      document.body.style.overflow = '';
+      setTimeout(() => {
+        const form = document.getElementById('regForm');
+        const success = document.getElementById('formSuccess');
+        if(form) form.style.display = '';
+        if(success) success.style.display = 'none';
+      }, 400);
+    }
+    function submitForm() {
+      const fname   = document.getElementById('fname').value.trim();
+      const email   = document.getElementById('remail').value.trim();
+      const service = document.getElementById('service').value;
+      if (!fname || !email || !service) {
+        alert('Please fill in all required fields (Name, Email, and Service).');
+        return;
+      }
+      document.getElementById('regForm').style.display = 'none';
+      const success = document.getElementById('formSuccess');
+      success.style.display = 'flex';
+    }
+
+    /* ── MOBILE MENU ── */
+    function toggleMenu() {
+      document.getElementById('mobileMenu').classList.toggle('open');
+    }
+
+    /* ── FILTER BUTTONS ── */
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+
+    /* ── INTERSECTION OBSERVER ── */
+    const revealTargets = document.querySelectorAll('.card, .amenity-card, .testimonial, .process-step, .service-card');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    revealTargets.forEach(el => observer.observe(el));
+
+    /* ── ANIMATED STAT COUNTERS ── */
+    const stats = document.querySelectorAll('.stat strong[data-count]');
+    const statObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseInt(el.dataset.count);
+          const suffix = el.dataset.suffix || '+';
+          const duration = 1600;
+          const start = performance.now();
+          const tick = (now) => {
+            const elapsed = now - start;
+            const progress = Math.min(elapsed / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            const value = Math.round(eased * target);
+            el.textContent = value.toLocaleString() + suffix;
+            if (progress < 1) requestAnimationFrame(tick);
+          };
+          requestAnimationFrame(tick);
+          statObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+    stats.forEach(el => statObserver.observe(el));
+  </script>
+
+</body>
+</html>
