@@ -1924,6 +1924,10 @@ section h2 em { font-style: italic; color: var(--terra); }
    RESPONSIVE — EXTRA SMALL (≤ 360px)
 ═══════════════════════════════════════════════ */
 @media (max-width: 360px) {
+
+ .logo-mark {
+  transform: translateX(-33px);
+  }
   .hero-title { font-size: clamp(1.9rem, 13vw, 2.5rem); }
   .search-bar { border-radius: 8px; }
   .stat { flex: 0 0 100%; border-right: none !important; }
