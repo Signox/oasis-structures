@@ -735,6 +735,40 @@ ul { list-style: none; }
 .search-btn svg { width: 16px; height: 16px; }
 .search-btn:hover { background: var(--terra); }
 
+/* Search bar — mobile trigger button (hidden on desktop) */
+.search-toggle-btn {
+  display: none;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  background: var(--forest);
+  color: var(--white);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  border-radius: var(--radius);
+}
+.search-toggle-btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+.search-toggle-btn:hover { background: var(--terra); }
+.search-toggle-btn .toggle-arrow {
+  margin-left: auto;
+  transition: transform 0.3s ease;
+}
+.search-bar.expanded .search-toggle-btn .toggle-arrow {
+  transform: rotate(180deg);
+}
+
+/* Collapsible fields wrapper */
+.search-fields-wrap {
+  display: contents; /* transparent wrapper on desktop */
+}
+
 .hero-register-nudge {
   margin-top: 1.4rem;
   font-size: 0.93rem;
@@ -1753,11 +1787,34 @@ section h2 em { font-style: italic; color: var(--terra); }
   .hero-title { font-size: clamp(2.4rem, 10vw, 3.5rem); }
   .hero-content { padding-top: 64px; }
 
-  /* Search bar — stack vertically */
+  /* Search bar — collapsed trigger on mobile */
   .search-bar {
     flex-direction: column;
     border-radius: var(--radius);
     max-width: 100%;
+    overflow: visible;
+    background: transparent;
+    box-shadow: none;
+  }
+  .search-toggle-btn {
+    display: flex;
+    box-shadow: 0 8px 32px rgba(10,22,14,0.35);
+  }
+  /* Hide the fields/dividers by default; show when expanded */
+  .search-fields-wrap {
+    display: none;
+    flex-direction: column;
+    background: var(--white);
+    border-radius: 0 0 var(--radius) var(--radius);
+    box-shadow: 0 16px 48px rgba(10,22,14,0.25);
+    overflow: hidden;
+    animation: fadeUp 0.25s ease both;
+  }
+  .search-bar.expanded .search-toggle-btn {
+    border-radius: var(--radius) var(--radius) 0 0;
+  }
+  .search-bar.expanded .search-fields-wrap {
+    display: flex;
   }
   .search-field {
     border-bottom: 1px solid var(--sand2);
