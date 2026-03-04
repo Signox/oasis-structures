@@ -128,6 +128,7 @@
   </header>
 
   <!-- HERO -->
+   
   <section class="hero">
     <div class="hero-bg">
       <!-- <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1800&q=85" alt="Construction site with machinery at work"/> -->
@@ -140,7 +141,13 @@
       <p class="hero-company-name">Oasis Structures <em>(U)</em> Limited</p>
       <p class="hero-eyebrow">Construction &amp; Landscape Management — Est. 2012, Kampala</p>
       <h1 class="hero-title">Built to <em>last.</em></h1>
-      <div class="search-bar">
+      <div class="search-bar" id="searchBar">
+        <button class="search-toggle-btn" onclick="toggleSearchBar()" aria-expanded="false" aria-controls="searchFieldsWrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          Find a Service &amp; Get a Quote
+          <svg class="toggle-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="search-fields-wrap" id="searchFieldsWrap">
         <div class="search-field">
           <label>Service Needed</label>
           <select>
@@ -174,6 +181,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
           Get Quote
         </button>
+        </div>
       </div>
       <p class="hero-register-nudge"><button class="hero-register-link" onclick="openModal()">Request a free site assessment →</button></p>
     </div>
@@ -186,6 +194,7 @@
     </div>
     <div class="hero-scroll"><span>Scroll to explore</span><div class="scroll-line"></div></div>
   </section>
+
 
   <!-- STATS STRIP -->
   <section class="stats-strip">
