@@ -1780,7 +1780,8 @@ section h2 em { font-style: italic; color: var(--terra); }
   .nav-inner { height: 64px; }
 
   /* Logo – shrink for mobile */
-  .hamburger { display: flex;margin-top: 0px;transform: translateX(-90px);   } 
+  .hamburger { display: flex;margin-top: 20px;transform: translateX(-50px) !important;   }
+  .logo-mark {transform: translateX(-35px); width: 130px; height: 46px;margin-top: 20px; }
 
   /* Hero */
   .hero { min-height: 580px; }
@@ -1895,7 +1896,9 @@ section h2 em { font-style: italic; color: var(--terra); }
 @media (max-width: 520px) {
   :root { --page-pad: 1rem; }
 
-  .hamburger { display: flex;margin-top: 20px;transform: translateX(-90px);color:blue !important;   } 
+  .hamburger { display: flex;margin-top: 20px;transform: translateX(-80px) !important;   }
+  .logo-mark {transform: translateX(-35px); width: 130px; height: 46px;margin-top: 20px; }
+  
 .mobile-register { width: 93vw;}
 
 .mobile-menu a { justify-content: center;width: 100% !important;}
