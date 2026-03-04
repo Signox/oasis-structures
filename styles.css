@@ -1780,7 +1780,7 @@ section h2 em { font-style: italic; color: var(--terra); }
   .nav-inner { height: 64px; }
 
   /* Logo – shrink for mobile */
-  .hamburger { display: flex;margin-top: 0px;transform: translateX(-10px);   } 
+  .hamburger { display: flex;margin-top: 0px;transform: translateX(0px);   } 
 
   /* Hero */
   .hero { min-height: 580px; }
@@ -1895,7 +1895,7 @@ section h2 em { font-style: italic; color: var(--terra); }
 @media (max-width: 520px) {
   :root { --page-pad: 1rem; }
 
-  .hamburger { display: flex;margin-top: 20px;transform: translateX(-10px);color:blue !important;   } 
+  .hamburger { display: flex;margin-top: 20px;transform: translateX(0px);color:blue !important;   } 
 .mobile-register { width: 93vw;}
 
 .mobile-menu a { justify-content: center;width: 100% !important;}
@@ -1976,7 +1976,7 @@ section h2 em { font-style: italic; color: var(--terra); }
    RESPONSIVE — EXTRA SMALL (≤ 360px)
 ═══════════════════════════════════════════════ */
 @media (max-width: 360px) {
-  .hamburger { display: flex;margin-top: 20px;transform: translateX(-100px) !important;   }
+  .hamburger { display: flex;margin-top: 20px;transform: translateX(-20px) !important;   }
   .logo-mark {transform: translateX(-35px); width: 130px; height: 46px;margin-top: 20px; }
 
   .hero-title { font-size: clamp(1.9rem, 13vw, 2.5rem); }
